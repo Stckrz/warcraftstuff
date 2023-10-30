@@ -1,0 +1,46 @@
+import React from 'react';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+const apiurl = 'https://raider.io/api/v1/mythic-plus/runs?season=season-7.3.0&region=world&dungeon=all&page=0'
+
+export function Leaderboard() {
+	const [data, setData] = useState([]);
+
+	useEffect(() => {
+		axios.get(apiurl).then((response) => {
+			let stuffs = response.data.rankings[0];
+
+			setData(stuffs);
+
+		});
+
+
+	}, []);
+
+
+	let dungeon_info = data.run.dungeon;
+	const dungeon_level = data.run.mythic_level;
+	const keystone_time_ms = data.run.keystone_time_ms;
+
+	if (!data) return (null);
+
+// 	Object.keys(data).forEach((key, index) => {
+// console.log(data[key]);
+// });
+//
+
+	return (
+
+		<div>
+
+				<pre>
+					{JSON.stringify(dungeon_info.name, null, 2)}
+				<br />
+					{JSON.stringify(dungeon_level, null, 2)}
+				<br />
+					{JSON.stringify(keystone_time_ms, null, 2)}
+				</pre>
+
+		</div>
+	)
+}
