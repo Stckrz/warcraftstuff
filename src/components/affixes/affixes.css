@@ -1,0 +1,26 @@
+.itemWrapper{
+	display: flex;
+	flex-direction: column;
+	align-items: space-evenly;
+	width:30%; 
+}
+
+.affixWrapper{
+display: flex;
+justify-content: space-evenly;
+
+}
+
+
+.itemName{
+/* border: 1px solid red; */
+}
+
+.description-box{
+border-top: 1px solid white;
+}
+
+.butt{
+display: flex;
+flex-direction: row;
+}

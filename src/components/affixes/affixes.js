@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import './affixes.css'
 
 export function Affixes() {
 	const [affixes, setAffixes] = useState();
@@ -10,53 +11,79 @@ export function Affixes() {
 		setAffixes(fetchedAffixes.affix_details);
 	}
 
-	async function fetchWowAff(number) {
-		const response = await fetch(`https://us.api.blizzard.com/data/wow/media/keystone-affix/${number}?namespace=static-us&locale=en_US&access_token=USMr6x7dhDV5Wr4MUHx0AL3gYECjG1XSWv`);
-		const fetchedAffixes = await response.json();
-		return fetchedAffixes.assets[0].value;
-		
+	function setShownHandler() {
+		affixes.map((item) => {
+			item.isShown = false;
+		})
 	}
 
-	function setIconHandler(id) {
+	function handleShowClick(str) {
 		setAffixes(
 			affixes.map((item) => {
-				if (item.id === id) {
-					return { ...item, icon: fetchWowAff(id)};
+				if (item.name === str) {
+					return { ...item, isShown: true };
 				} else {
-					return item;
+					return { ...item, isShown: false };
 				}
 			})
 		)
 	}
-	// setIconHandler(2);
+
 	useEffect(() => {
 		fetchAffixes()
-
 	}, []);
 
 	if (!affixes) return (null);
 
-
 	return (
-		<div>
-		<button onClick={()=>{ {setIconHandler(3)} }}>click</button>
+		<div className="affixWrapper">
 			{
 				affixes.map((item) => {
 					{
 						return (
 							<>
-								<div>{item.name}</div>
-								<div>{item.description}</div>
-								<div>{item.id}</div>
-								<br />
+								<div className='itemWrapper' onClick={() => {
+									{ setShownHandler() };
+									{ handleShowClick(item.name) }
+								}}>
+									<div className = "butt">
+										<div className='itemIcon'>
+											<MythicIcon id={item.id} />
+										</div>
+										<div className="itemName">
+											{item.name}
+										</div>
+									</div>
+
+									<div className="description-box">{item.isShown && item.description}
+									</div>
+								</div>
 							</>
+
 						)
 					}
 				})}
+			{/*
 			<pre>
 
 				{JSON.stringify(affixes, null, 2)}
 			</pre>
+			*/}
 		</div>
+	)
+}
+
+export function MythicIcon(id) {
+	const [icon, setIcon] = useState();
+	async function fetchWowAff(number) {
+		const response = await fetch(`https://us.api.blizzard.com/data/wow/media/keystone-affix/${number.id}?namespace=static-us&locale=en_US&access_token=USMr6x7dhDV5Wr4MUHx0AL3gYECjG1XSWv`);
+		const fetchedAffixes = await response.json();
+		setIcon(fetchedAffixes.assets[0].value);
+	}
+	useEffect(() => {
+		fetchWowAff(id);
+	}, []);
+	return (
+		<img src={icon} />
 	)
 }

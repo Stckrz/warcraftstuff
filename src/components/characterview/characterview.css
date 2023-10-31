@@ -1,0 +1,19 @@
+.characterWrap{
+	display: flex;
+	background-color: grey;
+	flex-direction: column;
+	height: auto;
+	width: 100%;
+	padding: 10px;
+	border-radius: 1em;
+}
+
+p{
+	margin: 0;
+}
+
+.namespace{
+display: flex;
+margin: 5px;
+flex-direction: column;
+}

@@ -1,0 +1,29 @@
+.mythicwrapper{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+height: auto;
+background-color: black;
+padding: 5px;
+margin-bottom: 5px;
+}
+.dungeonbasic{
+display: flex;
+flex-diretion: row;
+justify-content: space-between;
+}
+
+.mythiciconwrap{
+	display: flex;
+	flex-direction: row;
+    
+}
+.playercard{
+display: flex;
+}
+.rundetails{
+display: flex;
+align-self: center;
+justify-self: center;
+}
+

@@ -1,6 +1,14 @@
-/* .App { */
-/*   text-align: center; */
-/* } */
+.App {
+  text-align: left;
+  background-color: black;
+  color: white;
+  height: 100vh;
+  margin-left: 10px;
+  font-size: 25px;
+}
+body{
+background-color: black;
+}
 /**/
 /* .App-logo { */
 /*   height: 40vmin; */
