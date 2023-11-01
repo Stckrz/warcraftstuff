@@ -76,7 +76,9 @@ export function Affixes() {
 export function MythicIcon(id) {
 	const [icon, setIcon] = useState();
 	async function fetchWowAff(number) {
-		const response = await fetch(`https://us.api.blizzard.com/data/wow/media/keystone-affix/${number.id}?namespace=static-us&locale=en_US&access_token=USMr6x7dhDV5Wr4MUHx0AL3gYECjG1XSWv`);
+		const response = await fetch(`https://us.api.blizzard.com/data/wow/media/keystone-affix/${number.id}?namespace=static-us&locale=en_US&access_token=USVI4TFLQ61F2vXQqyg0QYHGXe29FIZory`);
+
+
 		const fetchedAffixes = await response.json();
 		setIcon(fetchedAffixes.assets[0].value);
 	}

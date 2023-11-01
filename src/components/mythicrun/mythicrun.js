@@ -86,7 +86,7 @@ export function MythicRunDetails(props) {
 	//
 	// }, [])
 	return (<div><button onClick={fetchData}>click!</button>
-		<pre>{JSON.stringify(rundata, null, 2)}</pre>
+		{/*<pre>{JSON.stringify(rundata, null, 2)}</pre>*/}
 	</div>)
 
 
