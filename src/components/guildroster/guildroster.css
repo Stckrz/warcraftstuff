@@ -2,3 +2,38 @@
 display: flex;
 flex-direction: row;
 }
+
+
+a{text-decoration: none;}
+
+.wrapper{
+display: flex;
+width: 100%;
+justify-content: space-around;
+margin: 5px;
+}
+.searchblock{
+display: flex;
+flex-direction: column;
+width: 14%	;
+}
+.namesearch{
+height: 25px;
+width: 100%;
+font-size: 25px;
+}
+.nameslist{
+	width: 100%;
+background-color: white;
+transition: background-color 5s;
+opacity: 50%;
+}
+.name{
+color: black;
+}
+.name:hover{
+background-color: grey;
+}
+.characterview{
+width: 80%;
+}

@@ -1,16 +1,26 @@
+
+
+.mrunwrap{
+display:  flex;
+flex-direction: column;
+padding: 5px;
+align-items: flex-end;
+width: 100%;
+}
+
 .mythicwrapper{
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-height: auto;
-background-color: black;
-padding: 5px;
-margin-bottom: 5px;
+	height: auto;
+	width: 100%;
+	background-color: black;
+	margin-bottom: 5px;
+	padding: 2px;
 }
 .dungeonbasic{
-display: flex;
-flex-diretion: row;
-justify-content: space-between;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .mythiciconwrap{
@@ -19,11 +29,11 @@ justify-content: space-between;
     
 }
 .playercard{
-display: flex;
+	display: flex;
 }
 .rundetails{
-display: flex;
-align-self: center;
-justify-self: center;
+	display: flex;
+	align-self: center;
+	justify-self: center;
 }
 

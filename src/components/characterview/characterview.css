@@ -1,15 +1,25 @@
+
 .characterWrap{
 	display: flex;
-	background-color: grey;
+	background-color: #4F4E56;
 	flex-direction: column;
 	height: auto;
 	width: 100%;
 	padding: 10px;
 	border-radius: 1em;
 }
+.content{
+	display: flex;
+
+	justify-content: flex-end;
+
+}
 
 p{
 	margin: 0;
+}
+.playercard{
+border-bottom: 1px solid black;
 }
 
 .namespace{

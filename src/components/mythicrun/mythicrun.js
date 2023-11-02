@@ -25,13 +25,12 @@ export function MythicRun(props) {
 	useEffect(() => {
 		fetchData()
 
-	}, [])
+	}, [characterName])
 	if (!rundata) return (null);
 
 
 	return (
-		<>
-			<div>
+			<div className="mrunwrap">
 				{rundata.map((item) => {
 					{
 						return (
@@ -50,20 +49,19 @@ export function MythicRun(props) {
 										})}
 									</div>
 								</div>
+								{/*
 								<div className="rundetails"><button onClick={async () => {
 
 									const response = await fetch(`https://raider.io/api/v1/mythic-plus/run-details?season=season-df-2&id=23002692`)
 									const fetchedData = await response.json();
 									console.log(fetchedData);
-								}}></button></div>
+								}}></button></div>*/}
 								{/* <div className="rundetails"><MythicRunDetails id={getIdHandler(item.url)}/></div>*/}
 							</div>
 						)
 					}
 				})}
 			</div>
-			<pre>{JSON.stringify(rundata, null, 2)}</pre>
-		</>
 
 	)
 
