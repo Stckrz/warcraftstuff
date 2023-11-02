@@ -4,40 +4,40 @@ import { CharacterOverview } from '../characterview/characterview';
 import './guildroster.css'
 import { token } from '../../library/oauth'
 
-export function GuildRosterList() {
-
-	const [list, setList] = useState([]);
-	const sortedList = useMemo(() => {
-		const sortedList = [...list];
-		sortedList.sort((a, b) => { return a.character.level - b.character.level })
-		return sortedList
-	}, [list])
-
-	async function fetchData() {
-		const response = await fetch(`https://us.api.blizzard.com/data/wow/guild/chogall/inebriated-raiding/roster?namespace=profile-us&locale=en_US&access_token=${token}`)
-		const fetchedData = await response.json();
-		setList(fetchedData.members)
-	}
-
-	useEffect(() => {
-		fetchData()
-	}, [])
-
-	return (
-		<>
-			{
-				sortedList.reverse().map((item, key) => {
-					{
-						return (
-							<>
-								<div className="character">{`${item.character.level}  ${item.character.name}`}</div>
-							</>
-						)
-					}
-				})}
-		</>
-	)
-}
+// export function GuildRosterList() {
+//
+// 	const [list, setList] = useState([]);
+// 	const sortedList = useMemo(() => {
+// 		const sortedList = [...list];
+// 		sortedList.sort((a, b) => { return a.character.level - b.character.level })
+// 		return sortedList
+// 	}, [list])
+//
+// 	async function fetchData() {
+// 		const response = await fetch(`https://us.api.blizzard.com/data/wow/guild/chogall/inebriated-raiding/roster?namespace=profile-us&locale=en_US&access_token=${token}`)
+// 		const fetchedData = await response.json();
+// 		setList(fetchedData.members)
+// 	}
+//
+// 	useEffect(() => {
+// 		fetchData()
+// 	}, [])
+//
+// 	return (
+// 		<>
+// 			{
+// 				sortedList.reverse().map((item, key) => {
+// 					{
+// 						return (
+// 							<>
+// 								<div className="character">{`${item.character.level}  ${item.character.name}`}</div>
+// 							</>
+// 						)
+// 					}
+// 				})}
+// 		</>
+// 	)
+// }
 
 export function GuildRosterSearch() {
 	const [bartext, setBarText] = useState();
@@ -47,35 +47,16 @@ export function GuildRosterSearch() {
 
 	const [displayCharacter, setDisplayCharacter] = useState();
 	const [characterRealm, setCharacterRealm] = useState();
+	const [characterLevel, setCharacterLevel] = useState();
 
 	let nameslist = useMemo(() => {
 		let nameslist = [];
 		list.map((item, key) => {
-			nameslist = [...nameslist, {name: item.character.name, realm: item.character.realm.slug}]
+			nameslist = [...nameslist, {name: item.character.name, level: item.character.level, realm: item.character.realm.slug}]
 		})
 		return nameslist
 	}, [list])
 	
-	function addCharacter(name, realm){
-		const character = {
-			name: name,
-			realm: realm,
-
-		};
-		setCharacterList([...characterList, name])
-
-	}
-
-	// function addTask() {
-	// 	const task = {
-	// 		id: list.length === 0 ? 1 : list[list.length - 1].id + 1,
-	// 		taskName: text,
-	// 		completed: false,
-	// 	};
-	// 	setList([...list, task])
-	// 	setText("")
-	// }
-
 	async function fetchData() {
 		const response = await fetch(`https://us.api.blizzard.com/data/wow/guild/chogall/inebriated-raiding/roster?namespace=profile-us&locale=en_US&access_token=${token}`)
 		const fetchedData = await response.json();
@@ -103,13 +84,16 @@ export function GuildRosterSearch() {
 					bartext !== "" &&
 					<div className="nameslist">{handleSearch(nameslist).map((item, key) => {
 						return (<div className="name" onClick={() => {
-									{ setDisplayCharacter(item.name) };{setCharacterRealm(item.realm)}}}>{item.name}</div>)
+									{ setDisplayCharacter(item.name.toLowerCase()) };
+									{ setCharacterRealm(item.realm) };
+									{ setCharacterLevel(item.level) }
+								}}>{item.name}</div>)
 					})
 					}</div>
 				}</div>
 			{
 				displayCharacter !== undefined &&
-				<div className="characterview"><CharacterOverview characterRealm={characterRealm} characterName={displayCharacter} />{displayCharacter}{characterRealm}</div>
+				<div className="characterview"><CharacterOverview characterRealm={characterRealm} characterName={displayCharacter} characterLevel={characterLevel}/></div>
 			}
 			
 		</div >

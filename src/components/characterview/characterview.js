@@ -2,10 +2,11 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import './characterview.css';
 import { MythicRun } from './../mythicrun/mythicrun';
+import { CharacterRaidProgres, CharacterRaidProgress } from './../playerraidprogress/playerraidprogress';
 
 
 export function CharacterOverview(props) {
-	const { characterName, characterRealm } = props;
+	const { characterName, characterRealm, characterLevel } = props;
 	const [data, setData] = useState();
 
 	async function fetchData() {
@@ -27,10 +28,11 @@ export function CharacterOverview(props) {
 					<div className="thumbnail"><img src={data.thumbnail_url} /></div>
 					<div className="namespace">
 						<p>{data.name}</p>
-						<p>{`${data.race}   ${data.class}`}</p>
+						<p>{`${characterLevel}   ${data.race}   ${data.class}`}</p>
 					</div>
 				</div>
 				<div className='content'>
+					<div>raid progress<CharacterRaidProgress characterName={characterName} characterRealm={characterRealm} /></div>
 					<div>recent m+ runs<MythicRun characterName={characterName} /></div>
 				</div>
 			</div>
