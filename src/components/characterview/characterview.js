@@ -32,7 +32,7 @@ export function CharacterOverview(props) {
 					</div>
 				</div>
 				<div className='content'>
-					<div>raid progress<CharacterRaidProgress characterName={characterName} characterRealm={characterRealm} /></div>
+					<div className="raid">raid progress<CharacterRaidProgress characterName={characterName} characterRealm={characterRealm} /></div>
 					<div>recent m+ runs<MythicRun characterName={characterName} /></div>
 				</div>
 			</div>

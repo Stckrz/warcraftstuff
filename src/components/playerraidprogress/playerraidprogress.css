@@ -1,0 +1,23 @@
+.raidwrapper{
+	background-color: black;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+}
+.raidname{
+	border-bottom: solid 1px gray;
+	width: 100%;
+	text-align: center;
+}
+.difficultywrapper{
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+.difficulty{
+	display: flex;
+	flex-direction: column;
+}

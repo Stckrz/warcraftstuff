@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-
+import './playerraidprogress.css';
+import { token } from '../../library/oauth'
 
 
 export function CharacterRaidProgress(props) {
@@ -9,7 +10,7 @@ export function CharacterRaidProgress(props) {
 
 
 	async function fetchData() {
-		const response = await fetch(`https://us.api.blizzard.com/profile/wow/character/${characterRealm}/${characterName}/encounters/raids?namespace=profile-us&locale=en_US&access_token=USVI4TFLQ61F2vXQqyg0QYHGXe29FIZory`)
+		const response = await fetch(`https://us.api.blizzard.com/profile/wow/character/${characterRealm}/${characterName}/encounters/raids?namespace=profile-us&locale=en_US&access_token=${token}`)
 		const fetchedData = await response.json();
 		setData(fetchedData.expansions.filter((item) => { return item.expansion.name === "Current Season" }))
 
@@ -25,20 +26,20 @@ export function CharacterRaidProgress(props) {
 
 		<>
 			{data[0] !== undefined ?
-				<>
-					<div>{data[0].instances[0].instance.name}</div>
-					<div>
+				<div className="raidwrapper">
+					<div className="raidname">{data[0].instances[0].instance.name}</div>
+					<div className="difficultywrapper">
 						{data[0].instances[0].modes.map((item) => {
 							{
 								return (
-									<div>{`${item.difficulty.name} ${item.progress.completed_count}/${item.progress.total_count}`}</div>
+									<div className="difficulty">{item.difficulty.name}<div>{`${item.progress.completed_count}/${item.progress.total_count}`}</div></div>
 								)
 							}
 						})}
 					</div>
 
-				</>
-			:<div>No raid progress this season</div>}
+				</div>
+			:<div className="raidwrapper">No raid progress this season</div>}
 		</>
 
 	)
