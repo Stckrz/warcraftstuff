@@ -3,58 +3,29 @@ import { useState, useEffect, useMemo } from 'react';
 import './playerraidprogress.css';
 import { token } from '../../library/oauth'
 
+const defaultModeArray = [
+	{ difficulty: 'Raid Finder', score: '-', total: '-' },
+	{ difficulty: 'Normal', score: '-', total: '-' },
+	{ difficulty: 'Heroic', score: '-', total: '-' },
+	{ difficulty: 'Mythic', score: '-', total: '-' }
+]
 
 export function CharacterRaidProgress(props) {
 	const { characterName, characterRealm } = props;
 	const [data, setData] = useState();
-	const [modelist, setModeList] = useState([
-		{difficulty: 'raid finder', score: '-'},
-		{difficulty: 'normal', score: '-'},
-		{difficulty: 'heroic', score: '-'},
-		{difficulty: 'mythic', score: '-'}
-	])
-
-// b.map((bitem) => {
-// a.find(item => item.difficulty === bitem.difficulty).score = bitem.score
-// })
+	const [modelist, setModeList] = useState(defaultModeArray)
 
 
+	useMemo(() => {
+		if (!data?.instances?.length) return null;
+		let listCopy = structuredClone(defaultModeArray)
+		let apilistCopy = data?.instances[0].modes ?? []
 
-	
-	// function handleEdit() {
-	// 	setList(
-	// 		list.map((task)=>{
-	// 			if (task.id === item.id){
-	// 				return {...task, taskName: text};
-	// 			}else{
-	// 				return task;
-	// 			}
-	// 			})
-	// 	)
-	//
-	// }
-
-	// const modes = useMemo(() => {
-	// 	if(!data) return null;
-	// 	return data[0]?.instances[0]?.modes?.map((mode) => {
-	// 		return {
-	// 			difficulty: mode.difficulty.name,
-	// 			completed: mode.progress.completed_count,
-	// 			total: mode.progress.total_count,
-	// 		}
-	// 	});
-	// }, [data]);
-
-	const modes = useMemo(() => {
-		if(!data) return null;
-		let listCopy = [...modelist]
-		return data[0]?.instances[0]?.modes?.map((mode) => {
-			return {
-				difficulty: mode.difficulty.name,
-				completed: mode.progress.completed_count,
-				total: mode.progress.total_count,
-			}
-		});
+		for (let bitem of apilistCopy) {
+			listCopy.find(item => item.difficulty === bitem.difficulty.name).score = bitem.progress.completed_count
+			listCopy.find(item => item.difficulty === bitem.difficulty.name).total = bitem.progress.total_count
+		}
+		setModeList(listCopy)
 	}, [data]);
 
 
@@ -62,52 +33,42 @@ export function CharacterRaidProgress(props) {
 		const response = await fetch(`https://us.api.blizzard.com/profile/wow/character/${characterRealm}/${characterName}/encounters/raids?namespace=profile-us&locale=en_US&access_token=${token}`)
 		const fetchedData = await response.json();
 		setData(
-			fetchedData.expansions?.filter(
+			fetchedData.expansions?.find(
 				(item) => { return item.expansion.name === "Current Season" }
 			) ?? []
 		)
-		console.log(fetchedData.expansions?.filter((item) => { return item.expansion.name === "Current Season" }))
 	}
-
 
 
 	useEffect(() => {
 		fetchData()
 	}, [characterName])
+
 	if (!data) return (null);
 
 	return (
-
 		<>
-			{data[0] !== undefined ?
-				<div className="raidwrapper">
-					<div className="raidname">
-						{data[0].instances[0].instance.name}
-					</div>
-					<div className="difficultywrapper">
-						{
-							modes?.map((item) => {
-								/*{ setModes([...modes, { difficulty: item.difficulty.name, completed: item.progress.completed_count, total: item.progress.total_count }]) }*/
-
-								return (
-									<div className="difficulty">
-										{item.difficulty}
-										<div>
-											{item.completed}/{item.total}
-										</div>
-									</div>
-								)
-							})
-						}
-					</div>
-
+			{data.expansion !== undefined ?
+			<div className="raidwrapper">
+				<div className="raidname">
+					{data.instances[0].instance.name}
 				</div>
-				: <div className="raidwrapper">No raid progress this season</div>
-			}
+				<div className="difficultywrapper">
+					{
+						modelist.map((item) => {
+							return (
+								<div className="difficulty">
+									<div>{item.difficulty}</div>
+									<div>{item.score}/{item.total}</div>
+								</div>
+							)
+						})
+					}
+				</div>
+			</div>
+		:<div></div>	}	
 		</>
-
 	)
-
 }
 
 

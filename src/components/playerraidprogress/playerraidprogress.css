@@ -1,6 +1,6 @@
 .raidwrapper{
 	background-color: black;
-	height: 25%;
+	height: 15%;
 	width: 100%;
 	padding: 10px;
 	display: flex;
@@ -24,6 +24,8 @@
 	background-color: black;
 	display: flex;
 	flex-direction: column;
-	height: 100%;
-	width: 100%;
+	align-items: center;
+	justify-content: center;
+	height: 80%;
+	width: 80%;
 }
