@@ -7,8 +7,32 @@ import { token } from '../../library/oauth'
 export function CharacterRaidProgress(props) {
 	const { characterName, characterRealm } = props;
 	const [data, setData] = useState();
-	const [modelist, setModeList] = useState([{difficulty: 'a'},{difficulty: 'b'},{difficulty: 'c'},{difficulty: 'c'}])
+	const [modelist, setModeList] = useState([
+		{difficulty: 'raid finder', score: '-'},
+		{difficulty: 'normal', score: '-'},
+		{difficulty: 'heroic', score: '-'},
+		{difficulty: 'mythic', score: '-'}
+	])
 
+// b.map((bitem) => {
+// a.find(item => item.difficulty === bitem.difficulty).score = bitem.score
+// })
+
+
+
+	
+	// function handleEdit() {
+	// 	setList(
+	// 		list.map((task)=>{
+	// 			if (task.id === item.id){
+	// 				return {...task, taskName: text};
+	// 			}else{
+	// 				return task;
+	// 			}
+	// 			})
+	// 	)
+	//
+	// }
 
 	// const modes = useMemo(() => {
 	// 	if(!data) return null;
@@ -23,6 +47,7 @@ export function CharacterRaidProgress(props) {
 
 	const modes = useMemo(() => {
 		if(!data) return null;
+		let listCopy = [...modelist]
 		return data[0]?.instances[0]?.modes?.map((mode) => {
 			return {
 				difficulty: mode.difficulty.name,
