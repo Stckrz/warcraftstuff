@@ -1,0 +1,31 @@
+body{margin: 0;}
+
+a{
+	color: white;
+}
+li{
+	list-style-type: none;
+	background-color: grey;
+	padding: 0;
+	margin: 5px;
+	height: 100%;
+}
+
+
+.navbar{
+	display: flex;
+	flex-direction: row;
+	background-color: grey;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	
+
+}
+.navlinkContainer{
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}

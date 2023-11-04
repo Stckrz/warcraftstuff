@@ -79,6 +79,7 @@ export function GuildRosterSearch() {
 		<>
 		<div className="wrapper">
 			<div className='searchblock'>
+					<div>Character Name:</div>
 				<input className="namesearch" onChange={handleChange} />
 				{
 					bartext !== "" &&

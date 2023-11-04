@@ -9,17 +9,17 @@ a{text-decoration: none;}
 .wrapper{
 display: flex;
 width: 100%;
-justify-content: space-around;
+justify-content: space-evenly;
 margin: 5px;
 }
 .searchblock{
 display: flex;
 flex-direction: column;
-width: 14%	;
+width: 13%	;
 }
 .namesearch{
 height: 25px;
-width: 100%;
+width: 96%;
 font-size: 25px;
 }
 .nameslist{

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { token } from '../../library/oauth';
 import './affixes.css'
 
 export function Affixes() {
@@ -76,7 +77,7 @@ export function Affixes() {
 export function MythicIcon(id) {
 	const [icon, setIcon] = useState();
 	async function fetchWowAff(number) {
-		const response = await fetch(`https://us.api.blizzard.com/data/wow/media/keystone-affix/${number.id}?namespace=static-us&locale=en_US&access_token=USVI4TFLQ61F2vXQqyg0QYHGXe29FIZory`);
+		const response = await fetch(`https://us.api.blizzard.com/data/wow/media/keystone-affix/${number.id}?namespace=static-us&locale=en_US&access_token=${token}`);
 
 
 		const fetchedAffixes = await response.json();

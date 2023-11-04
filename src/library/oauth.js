@@ -1,1 +1,2 @@
-export const token = 'USVI4TFLQ61F2vXQqyg0QYHGXe29FIZory';
+export const token = 'US4nqPNy7tXiPXeE6e2AfkjO5h7RQsyXcY'
+

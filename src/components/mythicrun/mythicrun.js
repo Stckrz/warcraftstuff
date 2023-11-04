@@ -20,7 +20,6 @@ export function MythicRun(props) {
 
 	}
 
-
 	// url.matches(/.+\/(\d+)-)[1]
 	useEffect(() => {
 		fetchData()
@@ -38,7 +37,7 @@ export function MythicRun(props) {
 								<div className="dungeonbasic">
 									{item.dungeon}
 									<br />
-									{item.mythic_level}
+									{item.mythic_level}<br />{new Date(item.completed_at).toLocaleDateString()}
 									<div className="mythiciconwrap">
 										{item.affixes.map((affix) => {
 											{
@@ -57,6 +56,7 @@ export function MythicRun(props) {
 									console.log(fetchedData);
 								}}></button></div>*/}
 								{/* <div className="rundetails"><MythicRunDetails id={getIdHandler(item.url)}/></div>*/}
+		{/*<pre>{JSON.stringify(rundata, null, 2)}</pre>*/}
 							</div>
 						)
 					}
