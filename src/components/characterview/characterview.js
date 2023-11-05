@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import './characterview.css';
-import { MythicRun } from './../mythicrun/mythicrun';
+import { MythicRun, MythicRunSummary } from './../mythicrun/mythicrun';
 import { CharacterRaidProgres, CharacterRaidProgress } from './../playerraidprogress/playerraidprogress';
 
 
@@ -33,7 +33,8 @@ export function CharacterOverview(props) {
 				</div>
 				<div className='content'>
 					<div className="raid">raid progress<CharacterRaidProgress characterName={characterName} characterRealm={characterRealm} /></div>
-					<div>recent m+ runs<MythicRun characterName={characterName} /></div>
+{/*					<div>recent m+ runs<MythicRun characterName={characterName} /></div> */}
+					<div className="mythicplus">mythic plus<MythicRunSummary characterRealm = {characterRealm} characterName={characterName} /></div>
 				</div>
 			</div>
 			<pre>

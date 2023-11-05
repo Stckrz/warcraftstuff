@@ -73,7 +73,7 @@ export function GuildRosterSearch() {
 
 	useEffect(() => {
 		fetchData()
-	}, [])
+	}, [displayCharacter])
 
 	return (
 		<>

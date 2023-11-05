@@ -26,29 +26,40 @@ export function CharacterRaidProgress(props) {
 			listCopy.find(item => item.difficulty === bitem.difficulty.name).total = bitem.progress.total_count
 		}
 		setModeList(listCopy)
-	}, [data]);
+
+		// setModeList(
+		// apilistCopy.map((item) => {
+		// 		if (modelist.find(balls => balls.difficulty === item.difficulty.name)) {
+		// 			return { ...modelist, score: item.progress.completed_count };
+		// 		} else {
+		// 			return item;
+		// 		}
+		//
+		// 	}))
+		
+}, [data]);
 
 
-	async function fetchData() {
-		const response = await fetch(`https://us.api.blizzard.com/profile/wow/character/${characterRealm}/${characterName}/encounters/raids?namespace=profile-us&locale=en_US&access_token=${token}`)
-		const fetchedData = await response.json();
-		setData(
-			fetchedData.expansions?.find(
-				(item) => { return item.expansion.name === "Current Season" }
-			) ?? []
-		)
-	}
+async function fetchData() {
+	const response = await fetch(`https://us.api.blizzard.com/profile/wow/character/${characterRealm}/${characterName}/encounters/raids?namespace=profile-us&locale=en_US&access_token=${token}`)
+	const fetchedData = await response.json();
+	setData(
+		fetchedData.expansions?.find(
+			(item) => { return item.expansion.name === "Current Season" }
+		) ?? []
+	)
+}
 
 
-	useEffect(() => {
-		fetchData()
-	}, [characterName])
+useEffect(() => {
+	fetchData()
+}, [characterName])
 
-	if (!data) return (null);
+if (!data) return (null);
 
-	return (
-		<>
-			{data.expansion !== undefined ?
+return (
+	<>
+		{data.expansion !== undefined ?
 			<div className="raidwrapper">
 				<div className="raidname">
 					{data.instances[0].instance.name}
@@ -66,9 +77,9 @@ export function CharacterRaidProgress(props) {
 					}
 				</div>
 			</div>
-		:<div></div>	}	
-		</>
-	)
+			: <div className="raidwrapper">No raid progress this season.</div>}
+	</>
+)
 }
 
 
