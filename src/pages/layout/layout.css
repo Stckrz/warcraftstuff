@@ -3,6 +3,7 @@ body{margin: 0;}
 a{
 	color: white;
 }
+
 li{
 	list-style-type: none;
 	background-color: grey;
@@ -11,7 +12,6 @@ li{
 	height: 100%;
 }
 
-
 .navbar{
 	display: flex;
 	flex-direction: row;
@@ -19,9 +19,8 @@ li{
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	
-
 }
+
 .navlinkContainer{
 	display: flex;
 	flex-direction: row;

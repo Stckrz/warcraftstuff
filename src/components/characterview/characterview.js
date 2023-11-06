@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import './characterview.css';
 import { MythicRun, MythicRunSummary } from './../mythicrun/mythicrun';
-import { CharacterRaidProgres, CharacterRaidProgress } from './../playerraidprogress/playerraidprogress';
+import {CharacterRaidProgress } from './../playerraidprogress/playerraidprogress';
 
 
 export function CharacterOverview(props) {
@@ -12,36 +12,43 @@ export function CharacterOverview(props) {
 	async function fetchData() {
 		const response = await fetch(`https://raider.io/api/v1/characters/profile?region=us&realm=${characterRealm}&name=${characterName}`)
 		const fetchedData = await response.json();
-		setData(fetchedData)
-
+		setData(fetchedData);
 	}
 
 	useEffect(() => {
-		fetchData()
-	}, [characterName, characterRealm])
+		fetchData();
+	}, [characterName, characterRealm]);
 	if (!data) return (null);
 
 	return (
 		<>
 			<div className="characterWrap">
 				<div className="playercard">
-					<div className="thumbnail"><img src={data.thumbnail_url} /></div>
+					<div className="thumbnail">
+						<img src={data.thumbnail_url} />
+					</div>
 					<div className="namespace">
 						<p>{data.name}</p>
 						<p>{`${characterLevel}   ${data.race}   ${data.class}`}</p>
 					</div>
 				</div>
 				<div className='content'>
-					<div className="raid">raid progress<CharacterRaidProgress characterName={characterName} characterRealm={characterRealm} /></div>
+					<div className="raid">
+						raid progress
+						<CharacterRaidProgress characterName={characterName} characterRealm={characterRealm} />
+					</div>
 {/*					<div>recent m+ runs<MythicRun characterName={characterName} /></div> */}
-					<div className="mythicplus">mythic plus<MythicRunSummary characterRealm = {characterRealm} characterName={characterName} /></div>
+					<div className="mythicplus">
+						mythic plus
+						<MythicRunSummary characterRealm = {characterRealm} characterName={characterName} />
+					</div>
 				</div>
 			</div>
 			<pre>
 				{/*{JSON.stringify(data, null, 2)}*/}
 			</pre>
 		</>
-	)
+	);
 
 }
 

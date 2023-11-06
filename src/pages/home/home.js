@@ -1,4 +1,3 @@
-
 const About = () => {
   return <h1> Me: gayy</h1>;
 };

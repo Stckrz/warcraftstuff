@@ -1,4 +1,3 @@
-
 .characterWrap{
 	display: flex;
 	background-color: #4F4E56;
@@ -9,29 +8,31 @@
 	padding: 10px;
 	border-radius: 1em;
 }
+
 .content{
 	display: flex;
 	width: 100%;
-
 	justify-content: space-between;
-
 }
 
 p{
 	margin: 0;
 }
+
 .playercard{
-border-bottom: 1px solid black;
+	border-bottom: 1px solid black;
 }
 
 .namespace{
-display: flex;
-margin: 5px;
-flex-direction: column;
+	display: flex;
+	margin: 5px;
+	flex-direction: column;
 }
+
 .raid{
-width: 50%;
+	width: 50%;
 }
+
 .mythicplus{
-width: 40%;
+	width: 40%;
 }

@@ -1,11 +1,9 @@
-
-
 .mrunwrap{
-display:  flex;
-flex-direction: column;
-padding: 5px;
-align-items: flex-end;
-width: 100%;
+	display:  flex;
+	flex-direction: column;
+	padding: 5px;
+	align-items: flex-end;
+	width: 100%;
 }
 
 .mythicwrapper{
@@ -17,6 +15,7 @@ width: 100%;
 	margin-bottom: 5px;
 	padding: 5px;
 }
+
 .dungeonbasic{
 	display: flex;
 	flex-direction: row;
@@ -26,11 +25,12 @@ width: 100%;
 .mythiciconwrap{
 	display: flex;
 	flex-direction: row;
-    
 }
+
 .playercard{
 	display: flex;
 }
+
 .rundetails{
 	display: flex;
 	align-self: center;

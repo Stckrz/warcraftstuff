@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { token } from '../../library/oauth';
-import './affixes.css'
+import './affixes.css';
 
 export function Affixes() {
 	const [affixes, setAffixes] = useState();
@@ -15,8 +15,8 @@ export function Affixes() {
 	function setShownHandler() {
 		affixes.map((item) => {
 			item.isShown = false;
-		})
-	}
+		});
+	};
 
 	function handleShowClick(str) {
 		setAffixes(
@@ -31,7 +31,7 @@ export function Affixes() {
 	}
 
 	useEffect(() => {
-		fetchAffixes()
+		fetchAffixes();
 	}, []);
 
 	if (!affixes) return (null);
@@ -55,7 +55,6 @@ export function Affixes() {
 											{item.name}
 										</div>
 									</div>
-
 									<div className="description-box">{item.isShown && item.description}
 									</div>
 								</div>
@@ -78,8 +77,6 @@ export function MythicIcon(id) {
 	const [icon, setIcon] = useState();
 	async function fetchWowAff(number) {
 		const response = await fetch(`https://us.api.blizzard.com/data/wow/media/keystone-affix/${number.id}?namespace=static-us&locale=en_US&access_token=${token}`);
-
-
 		const fetchedAffixes = await response.json();
 		setIcon(fetchedAffixes.assets[0].value);
 	}
