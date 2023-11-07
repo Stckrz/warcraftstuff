@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect, useMemo } from 'react';
 import './playerraidprogress.css';
-import { token } from '../../library/oauth';
+import { token } from 'library/oauth';
 
 const defaultModeArray = [
 	{ difficulty: 'Raid Finder', score: '-', total: '-' },

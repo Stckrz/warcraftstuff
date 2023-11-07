@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import './characterview.css';
-import { MythicRun, MythicRunSummary } from './../mythicrun/mythicrun';
-import {CharacterRaidProgress } from './../playerraidprogress/playerraidprogress';
+import { MythicRun, MythicRunSummary } from 'components/mythicrun/mythicrun';
+import {CharacterRaidProgress } from 'components/playerraidprogress/playerraidprogress';
+import { ArenaSummary } from 'components/pvp/pvpsummary/pvpsummary';
 
 
 export function CharacterOverview(props) {
@@ -41,6 +42,9 @@ export function CharacterOverview(props) {
 					<div className="mythicplus">
 						mythic plus
 						<MythicRunSummary characterRealm = {characterRealm} characterName={characterName} />
+					</div>
+					<div className="arena">
+						<ArenaSummary characterRealm = {characterRealm} characterName = {characterName}/>
 					</div>
 				</div>
 			</div>

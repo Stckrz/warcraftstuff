@@ -1,43 +1,9 @@
 import React from 'react';
 import { useState, useEffect, useMemo } from 'react';
-import { CharacterOverview } from '../characterview/characterview';
+import { CharacterOverview } from 'components/characterview/characterview';
 import './guildroster.css';
-import { token } from '../../library/oauth';
+import { token } from 'library/oauth';
 
-// export function GuildRosterList() {
-//
-// 	const [list, setList] = useState([]);
-// 	const sortedList = useMemo(() => {
-// 		const sortedList = [...list];
-// 		sortedList.sort((a, b) => { return a.character.level - b.character.level })
-// 		return sortedList
-// 	}, [list])
-//
-// 	async function fetchData() {
-// 		const response = await fetch(`https://us.api.blizzard.com/data/wow/guild/chogall/inebriated-raiding/roster?namespace=profile-us&locale=en_US&access_token=${token}`)
-// 		const fetchedData = await response.json();
-// 		setList(fetchedData.members)
-// 	}
-//
-// 	useEffect(() => {
-// 		fetchData()
-// 	}, [])
-//
-// 	return (
-// 		<>
-// 			{
-// 				sortedList.reverse().map((item, key) => {
-// 					{
-// 						return (
-// 							<>
-// 								<div className="character">{`${item.character.level}  ${item.character.name}`}</div>
-// 							</>
-// 						)
-// 					}
-// 				})}
-// 		</>
-// 	)
-// }
 
 export function GuildRosterSearch() {
 	const [bartext, setBarText] = useState();

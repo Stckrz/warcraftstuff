@@ -1,4 +1,4 @@
-import { GuildRosterSearch } from '../../components/guildroster/guildroster';
+import { GuildRosterSearch } from 'components/guildroster/guildroster';
 import './charactersearch.css';
 
 const CharacterSearch = () => {

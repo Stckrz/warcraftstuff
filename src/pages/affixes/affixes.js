@@ -1,4 +1,4 @@
-import { Affixes } from '../../components/affixes/affixes';
+import { Affixes } from 'components/affixes/affixes';
 const About = () => {
   return <div><Affixes /></div>;
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { token } from '../../library/oauth';
+import { token } from 'library/oauth';
 import './affixes.css';
 
 export function Affixes() {
