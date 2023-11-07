@@ -1,18 +1,16 @@
-import React from 'react'
+import React from 'react';
 import { MythicIcon } from 'components/affixes/affixes';
+import './singlerun.css';
 
 export function SingleRun(props) {
 	const { level, completed_at, dungeon, affixes } = props;
 
 	return (
-		<div className="wrapper">
+		<div className="mplus-wrapper">
 			<div className="dungeon-details">
-				{dungeon}
-				<br />
-				{level}
-				<br />
-				{new Date(completed_at).toLocaleDateString()}
-			</div>
+				<div className="dungeon-name">{dungeon}</div>
+				<div>{level}</div>
+				<div>{new Date(completed_at).toLocaleDateString()}</div>
 			<div className="mythiciconwrap">
 				{affixes.map((affix) => {
 					{
@@ -25,6 +23,7 @@ export function SingleRun(props) {
 						)
 					}
 				})}
+			</div>
 			</div>
 		</div>
 	);

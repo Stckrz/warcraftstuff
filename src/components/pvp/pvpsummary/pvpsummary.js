@@ -33,6 +33,7 @@ export function ArenaSummary(props) {
 		<div className="bracketwrapper">
 			{twosRating.rating !== undefined ?
 				<ArenaRatingBracket
+					bracket={'2v2'}
 					rating={twosRating.rating}
 					won={twosRating.season_match_statistics.won}
 					lost={twosRating.season_match_statistics.lost}
@@ -43,6 +44,7 @@ export function ArenaSummary(props) {
 
 			{threesRating.rating !== undefined ?
 			<ArenaRatingBracket
+				bracket={'3v3'}
 				rating={threesRating.rating}
 				won={threesRating.season_match_statistics.won}
 				lost={threesRating.season_match_statistics.lost}

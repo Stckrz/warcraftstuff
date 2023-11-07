@@ -1,0 +1,22 @@
+.mplus-wrapper{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	border: 3px solid gray;
+}
+
+.deets{
+	display: flex;
+	justify-content: space-between;
+}
+.dungeon-details{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.dungeon-name{
+	display: flex;
+	align-items: center;
+}

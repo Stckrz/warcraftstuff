@@ -71,11 +71,11 @@ export function GuildRosterSearch() {
 			</div >
 			{/*
 				<pre>{JSON.stringify(list, null, 2)}</pre>
-				<pre>{JSON.stringify(nameslist[2], null, 2)}</pre>
+
+				<pre>{JSON.stringify(nameslist, null, 2)}</pre>
 			*/}
 		</>
 	)
 }
 
 
-//.character.realm.slug

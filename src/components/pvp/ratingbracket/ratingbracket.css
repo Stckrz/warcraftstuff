@@ -1,0 +1,12 @@
+.arena-rating-wrapper{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.rating{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
