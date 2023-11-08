@@ -23,4 +23,3 @@ const rotation = [
 ]
 
 
-console.log(rotation)

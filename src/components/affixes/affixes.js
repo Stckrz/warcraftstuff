@@ -2,14 +2,28 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { token } from 'library/oauth';
 import './affixes.css';
+import { rotation } from './rotation';
 
 export function Affixes() {
 	const [affixes, setAffixes] = useState();
+	const [affixLibrary, setAffixLibrary] = useState();
+	const [currentWeekAffixes, setCurrentWeekAffixes] = useState();
 
 	async function fetchAffixes() {
 		const response = await fetch('https://raider.io/api/v1/mythic-plus/affixes?region=us&locale=en');
+		const fetchedData = await response.json();
+		setAffixes(fetchedData.affix_details);
+	}
+
+	async function fetchAffixesLibrary() {
+		const response = await fetch(`https://us.api.blizzard.com/data/wow/keystone-affix/index?namespace=static-us&locale=en_US&access_token=USDVW9Tn3O1CZT7NVcR5CWREfjjeok6Aik`)
 		const fetchedAffixes = await response.json();
-		setAffixes(fetchedAffixes.affix_details);
+		setAffixLibrary(fetchedAffixes.affix_details);
+	}
+
+
+	function currentWeekSet(index){
+		setCurrentWeekAffixes(rotation[index])
 	}
 
 	function setShownHandler() {
