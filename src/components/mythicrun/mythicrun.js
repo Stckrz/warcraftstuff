@@ -2,9 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import './mythicrun.css';
 import { token } from 'library/oauth.js';
-import { MythicIcon } from 'components/affixes/affixes';
 import { SingleRun } from 'components/mythicrun/singlerun';
-import moment from 'moment';
 
 export function MythicRun(props) {
 	const { characterName } = props;
@@ -56,8 +54,8 @@ export function MythicRunSummary(props) {
 
 	function lastTuesday() {
 
-	let prevTuesday = new Date();
-	return new Date(prevTuesday.setDate(prevTuesday.getDate() - (prevTuesday.getDay() + 5) % 7))
+		let prevTuesday = new Date();
+		return new Date(prevTuesday.setDate(prevTuesday.getDate() - (prevTuesday.getDay() + 5) % 7))
 	}
 
 	async function fetchData() {
@@ -65,6 +63,7 @@ export function MythicRunSummary(props) {
 		const fetchedData = await response.json();
 		if (response.status === 200) {
 			setRunData(fetchedData?.mythic_plus_recent_runs);
+			console.log(fetchedData?.mythic_plus_recent_runs)
 			setSeasonScores(fetchedData?.mythic_plus_scores_by_season);
 		} else {
 			setRunData([])
@@ -85,8 +84,9 @@ export function MythicRunSummary(props) {
 	function dateCheckHandler() {
 		let a = 0
 		rundata.filter((item) => {
-			if (new Date(item.completed_at).getTime() > lastTuesday().getTime()){
-			a += 1;}
+			if (new Date(item.completed_at).getTime() > lastTuesday().getTime()) {
+				a += 1;
+			}
 		})
 		return a
 	}

@@ -32,9 +32,11 @@ export function CharacterOverview(props) {
 							characterName={characterName} 
 							race={data.race.name} 
 							realm={characterRealm} 
-							title={data.active_title?.name} 
+							title={data.active_title?.display_string} 
 							characterClass={data.character_class.name}
 							level={characterLevel}
+							last_login={data.last_login_timestamp}
+							item_level={data.equipped_item_level}
 						/>:<div>Character is so unimportant, it's not up-to-date in Blizzard's databas</div>
 					}
 

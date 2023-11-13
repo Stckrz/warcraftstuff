@@ -1,19 +1,10 @@
-.itemWrapper{
-	display: flex;
-	flex-direction: column;
-	width:30%; 
-}
-
 .affixWrapper{
 	display: flex;
 	justify-content: space-evenly;
+	flex-direction: column;
+	height: 50vh;
+	width: 100vw;
 }
-
-.description-box{
-	border-top: 1px solid white;
-}
-
-.butt{
-	display: flex;
-	flex-direction: row;
+.title{
+text-align: center;
 }

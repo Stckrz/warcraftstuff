@@ -1,5 +1,5 @@
 import React from 'react';
-import { MythicIcon } from 'components/affixes/affixes';
+import { MythicIcon } from 'components/affixes/mythicicon';
 import './singlerun.css';
 
 export function SingleRun(props) {

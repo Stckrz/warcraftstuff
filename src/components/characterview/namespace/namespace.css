@@ -1,1 +1,10 @@
-/* naheuntahoeh */
+.text-stuff{
+	display: flex;
+	flex-direction: column;
+}
+.textwrapper{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

@@ -1,0 +1,25 @@
+.weeklywrapper{
+	display: flex;
+	flex-direction: row;
+}
+.itemWrapper{
+	display: flex;
+	flex-direction: column;
+	width:33%; 
+	border-top: 1px solid white;
+}
+
+.affixWrapper{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.description-box{
+	border-top: 1px solid white;
+	height: 100px;
+}
+
+.butt{
+	display: flex;
+	flex-direction: row;
+}

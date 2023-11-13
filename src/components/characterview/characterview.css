@@ -28,7 +28,7 @@ p{
 	flex-direction: column;
 }
 .balls{
-display: flex;
+	display: flex;
 }
 
 .raid{
