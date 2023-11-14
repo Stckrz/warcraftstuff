@@ -38,4 +38,7 @@
 	.itemWrapper{
 		width: 100%;
 	}
+	.description-box{
+		height: auto;
+	}
 }

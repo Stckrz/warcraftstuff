@@ -11,6 +11,7 @@
 .content{
 	display: flex;
 	flex-direction: column;
+
 	width: 100%;
 }
 
@@ -41,4 +42,36 @@ p{
 
 .arena{
 	width: 50%;
+}
+
+
+@media screen and (max-width: 480px){
+	.characterWrap{
+		flex-direction: column;
+		border-radius: 0;
+	}
+
+	.namespace{
+		margin: 0;
+	}
+
+	.thumbnail{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.content{
+		align-items: flex-start;
+		
+	}
+	.raid,
+	.mythicplus,
+	.arena{
+		width: 93%;
+	}
+
+	p{
+		text-align: center;
+	}
 }

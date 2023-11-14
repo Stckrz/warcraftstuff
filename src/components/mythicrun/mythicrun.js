@@ -103,9 +103,11 @@ export function MythicRunSummary(props) {
 		<div className="mythicwrapper">
 			{seasonScores[0] !== undefined ?
 				<div className="headwrap">
-					rating:
-					<div style={{ color: seasonScores[0].segments.all.color }}>
-						{seasonScores[0].scores.all}
+					<div className="ratingfield">
+						<div>rating:</div>
+						<div style={{ color: seasonScores[0].segments.all.color }}>
+							{seasonScores[0].scores.all}
+						</div>
 					</div>
 
 					<div>{`dungeons this week: ${dateCheckHandler()}`}</div>
@@ -114,7 +116,7 @@ export function MythicRunSummary(props) {
 
 
 			{bestRuns[0] !== undefined ?
-				<div>
+				<div className="singlerunwrap">
 					Top run this season:
 					<SingleRun
 						dungeon={bestRuns[0].dungeon.name}

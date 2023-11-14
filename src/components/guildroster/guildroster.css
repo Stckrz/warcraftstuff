@@ -44,3 +44,23 @@ a{
 .characterview{
 	width: 80%;
 }
+
+
+@media screen and (max-width: 480px){
+	.wrapper{
+		flex-direction: column;
+	}
+	.characterview{
+		position: relative;
+		width: 100%;
+		top: 75px;
+	}
+
+	.searchblock{
+		position: absolute;
+		top: 50px;
+		width: 100%;
+		z-index: 2;
+	}
+
+}

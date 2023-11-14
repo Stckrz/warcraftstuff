@@ -37,6 +37,31 @@
 }
 
 .headwrap{
-display: flex;
-justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
+}
+
+@media screen and (max-width: 480px){
+	.headwrap{
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+
+	.mythicwrapper{
+		align-items: center;
+		width: 100%;
+	}
+
+	.ratingfield{
+		width: 70%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.singlerunwrap{
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
 }

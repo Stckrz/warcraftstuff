@@ -56,6 +56,7 @@ export function GuildRosterSearch() {
 								{ setDisplayCharacter(item.name.toLowerCase()) };
 								{ setCharacterRealm(item.realm) };
 								{ setCharacterLevel(item.level) };
+								{ setBarText("") }
 							}}>
 								{item.name}
 							</div>);

@@ -20,3 +20,16 @@
 	display: flex;
 	align-items: center;
 }
+
+@media screen and (max-width: 480px){
+	.mplus-wrapper{
+		flex-direction: column;
+		width: 100%;
+	}
+	.dungeon-details{
+		align-items: flex-start;
+		flex-direction: column;
+		align-items: center;
+	}
+
+}
