@@ -1,5 +1,17 @@
+import './home.css';
+import {Link} from 'react-router-dom';
+
 const About = () => {
-  return <h1> Me: gayyyyy</h1>;
-};
+	return(
+	<div className="homewrap">
+			<img src='https://render.worldofwarcraft.com/us/guild/crest/188/emblem-188-b1b8b1-006391.jpg'/>
+		<h1> Inebriated Raiding </h1>
+			<div className = "quicklinks">
+			<span className="quicklinkbutton"><Link to="/affixes">Affixes</Link></span>
+			<span className="quicklinkbutton"><Link to="/charactersearch">Character Info</Link></span>
+			</div>
+	</div>
+	)
+}
 
 export default About;

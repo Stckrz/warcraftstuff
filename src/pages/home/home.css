@@ -1,0 +1,21 @@
+.homewrap{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.quicklinks{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100px;
+	justify-content: space-evenly;
+}
+
+.quicklinkbutton{
+	background-color: #016392;
+	border: 1px solid grey;
+	width: 100%;
+	text-align: center;
+}
