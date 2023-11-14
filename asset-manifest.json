@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/warcraftstuff/static/css/main.c588a76b.css",
-    "main.js": "/warcraftstuff/static/js/main.6ba8780f.js",
+    "main.css": "/warcraftstuff/static/css/main.8d03597e.css",
+    "main.js": "/warcraftstuff/static/js/main.6b7f0b54.js",
     "static/js/787.24f593d7.chunk.js": "/warcraftstuff/static/js/787.24f593d7.chunk.js",
     "static/media/logo.svg": "/warcraftstuff/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/warcraftstuff/index.html",
-    "main.c588a76b.css.map": "/warcraftstuff/static/css/main.c588a76b.css.map",
-    "main.6ba8780f.js.map": "/warcraftstuff/static/js/main.6ba8780f.js.map",
+    "main.8d03597e.css.map": "/warcraftstuff/static/css/main.8d03597e.css.map",
+    "main.6b7f0b54.js.map": "/warcraftstuff/static/js/main.6b7f0b54.js.map",
     "787.24f593d7.chunk.js.map": "/warcraftstuff/static/js/787.24f593d7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c588a76b.css",
-    "static/js/main.6ba8780f.js"
+    "static/css/main.8d03597e.css",
+    "static/js/main.6b7f0b54.js"
   ]
 }
