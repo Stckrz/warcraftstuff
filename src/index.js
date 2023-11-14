@@ -14,20 +14,18 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    {/* <BrowserRouter> */}
-			<Router>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="affixes" element={<Affixes />} />
-          <Route path="charactersearch" element={<CharacterSearch />} />
-          <Route path="home" element={<Home />} />
-        </Route>
-      </Routes>
-			</Router>
-    {/* </BrowserRouter> */}
-  </React.StrictMode>
+	<React.StrictMode>
+		<Router>
+			<Routes>
+				<Route path="/" element={<Layout />}>
+					<Route index element={<Home />} />
+					<Route path="affixes" element={<Affixes />} />
+					<Route path="charactersearch" element={<CharacterSearch />} />
+					<Route path="home" element={<Home />} />
+				</Route>
+			</Routes>
+		</Router>
+	</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

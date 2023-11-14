@@ -2,9 +2,8 @@
 	display: flex;
 	justify-content: space-evenly;
 	flex-direction: column;
-	height: 50vh;
 	width: 100vw;
 }
 .title{
-text-align: center;
+	text-align: center;
 }
