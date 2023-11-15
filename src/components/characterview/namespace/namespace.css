@@ -8,13 +8,25 @@
 	justify-content: space-between;
 	align-items: center;
 }
+.namespace-container{
+	display: flex;
+	flex-direction: row;
+}
 
 @media screen and (max-width: 500px){
 	.textwrapper{
 		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: flex-start;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		font-size: medium;
+	}
+	.namespace-container{
+		flex-direction: row;
+	}
+	.text-stuff{
+		justify-content: space-between;
+		align-items: center;
 	}
 
 }

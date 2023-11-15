@@ -22,7 +22,8 @@ export function Namespace(props) {
 	}, [characterName]);
 
 	return (
-		<>
+		<div className="namespace-container">
+			
 			<div className="thumbnail">
 				<img src={thumbnailURL} />
 			</div>
@@ -32,9 +33,11 @@ export function Namespace(props) {
 						: characterName.charAt(0).toUpperCase() + characterName.slice(1)}</div>
 					<div>{level} {race} {characterClass}</div>
 				</div>
-				<div className="text-stuff">Ilvl Equipped: {item_level}</div>
-				<div className="text-stuff">last login: {new Date(last_login).toLocaleDateString()}</div>
+				<div>
+					<div className="text-stuff">Ilvl Equipped: {item_level}</div>
+					<div className="text-stuff">last login: {new Date(last_login).toLocaleDateString()}</div>
+				</div>
 			</div>
-		</>
+		</div>
 	)
 }

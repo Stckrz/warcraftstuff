@@ -23,13 +23,19 @@
 
 @media screen and (max-width: 480px){
 	.mplus-wrapper{
-		flex-direction: column;
+		flex-direction: row;
 		width: 100%;
+		justify-content: space-between;
 	}
 	.dungeon-details{
-		align-items: flex-start;
-		flex-direction: column;
-		align-items: center;
+		flex-direction: row;
+		align-items: space-between;
+		font-size: medium;
+	}
+	.mythiciconwrap{
+		display: flex;
+		flex-direction: row;
+		scale: 70%;
 	}
 
 }

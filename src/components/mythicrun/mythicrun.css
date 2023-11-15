@@ -49,25 +49,26 @@
 
 @media screen and (max-width: 500px){
 	.headwrap{
-		flex-direction: column;
+		flex-direction: row;
 		align-items: center;
 		width: 100%;
+		font-size: medium;
 	}
 
 	.mythicwrapper{
 		align-items: center;
-		width: 100%;
+		width: 96%;
 	}
 
 	.ratingfield{
-		width: 70%;
+		width: 10%;
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
+		/* justify-content: space-between; */
 	}
 	.singlerunwrap{
 		flex-direction: column;
 		align-items: center;
-		width: 100%;
+		width: 96%;
 	}
 }

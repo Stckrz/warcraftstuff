@@ -11,7 +11,7 @@
 .content{
 	display: flex;
 	flex-direction: column;
-
+	font-size: medium;
 	width: 100%;
 }
 
@@ -73,5 +73,8 @@ p{
 
 	p{
 		text-align: center;
+	}
+	.playercard{
+		justify-content: center;
 	}
 }

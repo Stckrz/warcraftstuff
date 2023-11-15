@@ -32,6 +32,9 @@
 }
 
 @media screen and (max-width: 500px){
+	.raidwrapper{
+		font-size: medium;
+	}
 
 	.difficulty{
 		flex-direction: row;
