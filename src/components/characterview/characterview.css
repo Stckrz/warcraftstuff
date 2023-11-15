@@ -33,19 +33,19 @@ p{
 }
 
 .raid{
-	width: 50%;
+	width: 100%;
 }
 
 .mythicplus{
-	width: 50%;
+	width: 100%;
 }
 
 .arena{
-	width: 50%;
+	width: 100%;
 }
 
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 500px){
 	.characterWrap{
 		flex-direction: column;
 		border-radius: 0;
