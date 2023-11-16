@@ -1,11 +1,3 @@
-.mrunwrap{
-	display:  flex;
-	flex-direction: column;
-	padding: 5px;
-	align-items: flex-end;
-	width: 100%;
-}
-
 .mythicwrapper{
 	display: flex;
 	flex-direction: column;
@@ -39,6 +31,7 @@
 .headwrap{
 	display: flex;
 	justify-content: space-between;
+	font-size: 25px;
 }
 .ratingfield{
 	width: 15%;

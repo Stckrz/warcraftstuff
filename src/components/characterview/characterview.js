@@ -2,15 +2,37 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import './characterview.css';
 import { token } from 'library/oauth';
-import { MythicRun, MythicRunSummary } from 'components/mythicrun/mythicrun';
-import { CharacterRaidProgress } from 'components/playerraidprogress/playerraidprogress';
-import { ArenaSummary } from 'components/pvp/pvpsummary/pvpsummary';
 import { Namespace } from 'components/characterview/namespace/namespace';
+import { CharacterSummary } from 'components/characterview/summary/summary';
+import { MythicRun } from 'components/mythicrun/recentruns/recentruns';
 
 
 export function CharacterOverview(props) {
 	const { characterName, characterRealm, characterLevel } = props;
 	const [data, setData] = useState();
+	const [tabsarray, setTabsArray] = useState([
+		{ name: "overview", isSelected: true }, 
+		{ name: "mythic plus", isSelected: false }, 
+		{ name: "raid", isSelected: false }, 
+		{ name: "arena", isSelected: false }])
+
+	function handleShowClick(str) {
+		setTabsArray(
+			tabsarray.map((item) => {
+				if (item.name === str) {
+					return { ...item, isSelected: true };
+				} else {
+					return { ...item, isSelected: false };
+				}
+			})
+		)
+	}
+
+
+	function isSelectedHandler(){
+		return tabsarray.find(item => item.isSelected === true)
+
+	}
 
 	async function fetchData() {
 		const response = await fetch(`https://us.api.blizzard.com/profile/wow/character/${characterRealm}/${characterName}?namespace=profile-us&locale=en_US&access_token=${token}`)
@@ -28,35 +50,52 @@ export function CharacterOverview(props) {
 			<div className="characterWrap">
 				<div className="playercard">
 					{data.race !== undefined ?
-						<Namespace 
-							characterName={characterName} 
-							race={data.race.name} 
-							realm={characterRealm} 
-							title={data.active_title?.display_string} 
+						<Namespace
+							characterName={characterName}
+							race={data.race.name}
+							realm={characterRealm}
+							title={data.active_title?.display_string}
 							characterClass={data.character_class.name}
 							level={characterLevel}
 							last_login={data.last_login_timestamp}
 							item_level={data.equipped_item_level}
-						/>:<div>Character is so unimportant, it's not up-to-date in Blizzard's databas</div>
+						/> : <div>Character is so unimportant, it's not up-to-date in Blizzard's databas</div>
+					}
+
+				</div>
+				<div className="player-tab-container">
+					{
+						tabsarray.map((item) => {
+
+							return (
+							<>
+								<div onClick = {()=>{
+								{handleShowClick(item.name)}
+								}}>
+								{item.name}
+								</div>
+								</>
+							)
+						})
 					}
 
 				</div>
 				{data.level === 70 ?
-					<div className='content'>
-						<div className="raid">
-							<p>raid progress</p>
-							<CharacterRaidProgress characterName={characterName} characterRealm={characterRealm} />
-						</div>
-						{/* <div>recent m+ runs<MythicRun characterName={characterName} /></div> */}
-						<div className="mythicplus">
-							<p>mythic plus</p>
-							<MythicRunSummary characterRealm={characterRealm} characterName={characterName} />
-						</div>
-						<div className="arena">
-							<p>arena</p>
-							<ArenaSummary characterRealm={characterRealm} characterName={characterName} />
-						</div>
-					</div>
+					
+					<>
+					{isSelectedHandler().name === "overview" &&
+					<CharacterSummary characterName={characterName} characterRealm= {characterRealm} />}
+
+					{isSelectedHandler().name === "mythic plus" &&
+					<MythicRun characterName={characterName}  />}
+
+					{isSelectedHandler().name === "raid" &&
+					<CharacterSummary characterName={characterName} characterRealm= {characterRealm} />}
+
+					{isSelectedHandler().name === "arena" &&
+					<CharacterSummary characterName={characterName} characterRealm= {characterRealm} />}
+
+					</>
 					: <div>{'Character not max level so i dont give a shit about them'}</div>}
 			</div>
 			{/* <pre> */}

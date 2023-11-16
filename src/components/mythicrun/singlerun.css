@@ -3,6 +3,7 @@
 	justify-content: space-between;
 	flex-direction: row;
 	border: 3px solid gray;
+	width: 100%;
 }
 
 .deets{
@@ -14,6 +15,7 @@
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
+	font-size: 20px;
 }
 
 .dungeon-name{

@@ -1,0 +1,9 @@
+.mrunwrap{
+
+	display:  flex;
+	flex-direction: column;
+	padding: 5px;
+	align-items: flex-end;
+	width: 100%;
+
+}
