@@ -1,2 +1,2 @@
-export const token = `USLV5LsF2oyiTjeqbkIqHiZhIFAMSdjleG`
+export const token = `US5PGyJjYBp22kLBsRX6TQ5aLIj9N3oCSN`
 

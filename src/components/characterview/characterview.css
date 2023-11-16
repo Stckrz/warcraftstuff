@@ -28,6 +28,7 @@ p{
 	margin: 5px;
 	flex-direction: column;
 }
+
 .balls{
 	display: flex;
 }
@@ -49,6 +50,7 @@ p{
 	flex-direction: row;
 	justify-content: space-evenly;
 	background-color: #016392;
+	font-size: 25px;
 }
 
 @media screen and (max-width: 500px){
@@ -69,8 +71,8 @@ p{
 
 	.content{
 		align-items: flex-start;
-		
 	}
+
 	.raid,
 	.mythicplus,
 	.arena{
@@ -80,7 +82,12 @@ p{
 	p{
 		text-align: center;
 	}
+
 	.playercard{
 		justify-content: center;
+	}
+
+	.player-tab-container{
+		font-size: medium;
 	}
 }
