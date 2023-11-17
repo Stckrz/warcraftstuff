@@ -69,7 +69,7 @@ export function CharacterOverview(props) {
 
 							return (
 							<>
-								<div onClick = {()=>{
+								<div className="character-tab" onClick = {()=>{
 								{handleShowClick(item.name)}
 								}}>
 								{item.name}

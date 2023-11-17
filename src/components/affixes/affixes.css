@@ -6,4 +6,16 @@
 }
 .title{
 	text-align: center;
+	font-size: 25px;
+}
+
+
+
+@media screen and (max-width: 500px){
+	.title{
+		font-size: large;
+	}
+
+
+
 }

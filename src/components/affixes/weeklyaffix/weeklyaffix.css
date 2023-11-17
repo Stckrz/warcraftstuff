@@ -27,6 +27,11 @@
 	flex-direction: row;
 }
 
+.itemName{
+	display: flex;
+	align-items: center;
+}
+
 
 @media screen and (max-width: 500px){
 	.weeklywrapper{
@@ -38,7 +43,13 @@
 	.itemWrapper{
 		width: 100%;
 	}
+
+	.itemName{
+		font-size: medium;
+	}
+
 	.description-box{
 		height: auto;
+		font-size: medium;
 	}
 }

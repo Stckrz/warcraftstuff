@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import './mythicrun.css';
 import { token } from 'library/oauth.js';
 import { SingleRun } from 'components/mythicrun/singlerun';
+import { VaultStats } from 'components/mythicrun/vaultstats/vaultstats';
 
 
 export function MythicRunSummary(props) {
@@ -17,13 +18,12 @@ export function MythicRunSummary(props) {
 		const fetchedData = await response.json();
 		if (response.status === 200) {
 			setRunData(fetchedData?.mythic_plus_weekly_highest_level_runs);
-			console.log(fetchedData?.mythic_plus_recent_runs)
 			setSeasonScores(fetchedData?.mythic_plus_scores_by_season);
 		} else {
 			setRunData([])
 			setSeasonScores([])
 		}
-	}
+	};
 
 	async function fetchBestRuns() {
 		const response = await fetch(`https://us.api.blizzard.com/profile/wow/character/${characterRealm}/${characterName}/mythic-keystone-profile/season/11?namespace=profile-us&locale=en_US&access_token=${token}`);
@@ -36,9 +36,11 @@ export function MythicRunSummary(props) {
 	}
 
 
+
 	useEffect(() => {
 		fetchData();
 		fetchBestRuns();
+		
 	}, [characterName]);
 
 	if (!rundata) return (null);
@@ -54,6 +56,8 @@ export function MythicRunSummary(props) {
 							{seasonScores[0].scores.all}
 						</div>
 					</div>
+					<VaultStats rundata = {rundata} />
+
 					<div>{`dungeons this week: ${rundata.length}`}</div>
 				</div>
 				: <div>no data found</div>}

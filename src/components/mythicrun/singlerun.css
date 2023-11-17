@@ -3,6 +3,7 @@
 	justify-content: space-between;
 	flex-direction: row;
 	border: 3px solid gray;
+	/* background-color: gray; */
 	width: 100%;
 }
 
@@ -21,6 +22,18 @@
 .dungeon-name{
 	display: flex;
 	align-items: center;
+	width: 100%;
+}
+
+.mythiciconwrap{
+	display: flex;
+	justify-content: flex-end;
+	width: 30%;
+	gap: 5px;
+}
+
+.infowrap{
+	width: 30%;
 }
 
 @media screen and (max-width: 480px){

@@ -8,7 +8,7 @@ export function SingleRun(props) {
 	return (
 		<div className="mplus-wrapper">
 			<div className="dungeon-details">
-				<div>
+				<div className="infowrap">
 					<div className="dungeon-name">{dungeon}</div>
 					<div>{level}</div>
 					<div>{new Date(completed_at).toLocaleDateString()}</div>

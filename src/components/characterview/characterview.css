@@ -53,6 +53,10 @@ p{
 	font-size: 25px;
 }
 
+.character-tab{
+	cursor: pointer;
+}
+
 @media screen and (max-width: 500px){
 	.characterWrap{
 		flex-direction: column;
@@ -89,5 +93,6 @@ p{
 
 	.player-tab-container{
 		font-size: medium;
+
 	}
 }

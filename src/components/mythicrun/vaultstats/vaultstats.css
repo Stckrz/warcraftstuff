@@ -1,0 +1,9 @@
+.vaultwrapper{
+	display: flex;
+	flex-direction: column;
+}
+
+.reward-wrapper{
+	display: flex;
+	flex-direction: column;
+}
