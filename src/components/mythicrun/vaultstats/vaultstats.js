@@ -35,7 +35,7 @@ export function VaultStats(props) {
 						keylevel={weeklyKeyNumbers[0]} 
 						ilvlreward={findIlvlReward(0)} 
 					/>
-					: <div className="reward-wrapper">reward 1: <div>--</div></div>}
+					: <div className="no-reward-wrapper">reward 1: <div>--</div></div>}
 
 				{weeklyKeyNumbers.length >= 3 ?
 					<VaultBox 
@@ -43,7 +43,7 @@ export function VaultStats(props) {
 						keylevel={weeklyKeyNumbers[2]} 
 						ilvlreward={findIlvlReward(2)} 
 					/>
-					: <div className="reward-wrapper">reward 2: <div>--</div></div>}
+					: <div className="no-reward-wrapper">reward 2: <div>--</div></div>}
 
 				{weeklyKeyNumbers.length >= 8 ?
 					<VaultBox 
@@ -51,7 +51,7 @@ export function VaultStats(props) {
 						keylevel={weeklyKeyNumbers[7]} 
 						ilvlreward={findIlvlReward(7)} 
 					/>
-					: <div className="reward-wrapper">reward 3: <div>--</div></div>}
+					: <div className="no-reward-wrapper">reward 3: <div>--</div></div>}
 			</div>
 		</>
 

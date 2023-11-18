@@ -35,8 +35,6 @@ export function MythicRunSummary(props) {
 		}
 	}
 
-
-
 	useEffect(() => {
 		fetchData();
 		fetchBestRuns();
@@ -56,7 +54,7 @@ export function MythicRunSummary(props) {
 							{seasonScores[0].scores.all}
 						</div>
 					</div>
-					<VaultStats rundata = {rundata} />
+					<div className="vault-stats"><VaultStats rundata = {rundata} /></div>
 
 					<div>{`dungeons this week: ${rundata.length}`}</div>
 				</div>
@@ -80,50 +78,3 @@ export function MythicRunSummary(props) {
 	)
 }
 
-
-
-
-
-
-
-
-// export function MythicRun(props) {
-// 	const { characterName } = props;
-// 	const [rundata, setRunData] = useState();
-// 	const [toggle, setToggle] = useState(false);
-//
-// 	async function fetchData() {
-// 		const response = await fetch(`https://raider.io/api/v1/characters/profile?region=us&realm=chogall&name=${characterName}&fields=mythic_plus_recent_runs`);
-// 		const fetchedData = await response.json();
-// 		setRunData(fetchedData.mythic_plus_recent_runs);
-// 	}
-//
-// 	// function getIdHandler(url) {
-// 	// 	return url.match(/.+\/(\d+)-/)[1]
-// 	// }
-//
-// 	useEffect(() => {
-// 		fetchData();
-// 		console.log(rundata);
-// 	}, [characterName])
-// 	if (!rundata) return (null);
-//
-// 	return (
-// 		rundata !== undefined ?
-// 			<div className="mrunwrap">
-// 				{rundata.map((item) => {
-// 					{
-// 						return (
-// 							<SingleRun
-// 								dungeon={item.dungeon}
-// 								completed_at={item.completed_at}
-// 								level={item.mythic_level}
-// 								affixes={item.affixes}
-// 							/>
-// 						)
-// 					}
-// 				})}
-// 			</div>
-// 			: <div>butts</div>
-// 	)
-// }

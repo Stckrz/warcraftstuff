@@ -19,11 +19,7 @@ export function VaultBox(props) {
 
 	useEffect(() => {
 		rarityColorHandler()
-
 	}, [keylevel])
-
-
-
 
 	return (
 		<>
@@ -41,15 +37,6 @@ export function VaultBox(props) {
 						{ color: rarityColor.color }
 					}>{ilvlreward}</div>
 			</div>
-
 		</>
-
-
 	)
-
-
-
-
-
-
 }
