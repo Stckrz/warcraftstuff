@@ -22,7 +22,7 @@
 .dungeon-name{
 	display: flex;
 	align-items: center;
-	width: 100%;
+	width: 200%;
 }
 
 .mythiciconwrap{
@@ -44,7 +44,6 @@
 	}
 	.dungeon-details{
 		flex-direction: row;
-		align-items: space-between;
 		font-size: medium;
 	}
 	.mythiciconwrap{

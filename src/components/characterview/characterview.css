@@ -3,7 +3,7 @@
 	background-color: #4F4E56;
 	flex-direction: column;
 	height: auto;
-	width: 95%;
+	width: 94%;
 	padding: 10px;
 	border-radius: 1em;
 }
@@ -63,32 +63,21 @@ p{
 		border-radius: 0;
 	}
 
-	.namespace{
-		margin: 0;
-	}
 
 	.thumbnail{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.content{
-		align-items: flex-start;
+		/* display: flex; */
+		/* justify-content: center; */
+		/* align-items: center; */
 	}
 
 	.raid,
 	.mythicplus,
 	.arena{
-		width: 93%;
+		width: 100%;
 	}
 
 	p{
 		text-align: center;
-	}
-
-	.playercard{
-		justify-content: center;
 	}
 
 	.player-tab-container{

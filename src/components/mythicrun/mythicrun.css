@@ -30,7 +30,9 @@
 
 .headwrap{
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
+	flex-direction: row;
 	font-size: 25px;
 }
 .ratingfield{
@@ -43,28 +45,30 @@
 	width: 40%;
 }
 
+
+
+
 @media screen and (max-width: 500px){
 	.headwrap{
-		flex-direction: row;
-		align-items: center;
-		width: 100%;
+		gap: 10px;
 		font-size: medium;
+		flex-direction: column;
+		margin-bottom: 20px;
+	}
+	.vault-stats{
+		width: 100%;
 	}
 
 	.mythicwrapper{
 		align-items: center;
-		width: 96%;
 	}
 
 	.ratingfield{
-		width: 10%;
 		display: flex;
 		flex-direction: row;
-		/* justify-content: space-between; */
+		justify-content: space-around;
 	}
 	.singlerunwrap{
-		flex-direction: column;
-		align-items: center;
 		width: 96%;
 	}
 }

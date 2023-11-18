@@ -29,18 +29,22 @@ a{
 
 .nameslist{
 	width: 100%;
-	background-color: white;
+	background-color: grey;
 	transition: background-color 5s;
-	opacity: 50%;
+	opacity: 90%;
 }
 
 .name{
 	color: black;
-}
-
-.name:hover{
 	background-color: grey;
 }
+.name:hover{
+	opacity: 20%;
+	cursor: pointer;
+	background-color: black;
+	color: white;
+}
+
 
 .characterview{
 	width: 75%;
@@ -62,6 +66,7 @@ a{
 		top: 50px;
 		width: 100%;
 		z-index: 2;
+		font-size: 25px;
 	}
 
 }
