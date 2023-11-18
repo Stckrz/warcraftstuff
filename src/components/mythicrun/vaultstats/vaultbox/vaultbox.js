@@ -26,7 +26,7 @@ export function VaultBox(props) {
 			<div className="reward-wrapper" style={
 				{ border: `1px solid ${rarityColor.color}`, boxShadow: `0px 0px 5px 3px ${rarityColor.color}` }
 			}>
-				reward {boxnumber}:
+				<div className="reward-text">reward {boxnumber}:</div>
 					<div className="key-level"
 						style={
 							{ color: rarityColor.color }

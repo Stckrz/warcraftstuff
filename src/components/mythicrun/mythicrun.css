@@ -31,18 +31,20 @@
 .headwrap{
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-around;
 	flex-direction: row;
 	font-size: 25px;
 }
 .ratingfield{
-	width: 25%;
+	width: 10%;
+	align-items: center;
 	display: flex;
 	flex-direction: column;
 }
 
 .vault-stats{
-	width: 40%;
+	/* width: 40%; */
+	height: 20%;
 }
 
 

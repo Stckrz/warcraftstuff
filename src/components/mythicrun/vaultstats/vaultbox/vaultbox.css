@@ -4,5 +4,18 @@
 	align-items: center;
 	padding: 5px;
 	gap: 5px;
+	width: 33%;
+	aspect-ratio: 1/1;
 }
 
+.reward-text{
+	text-wrap: nowrap;
+}
+
+
+@media screen and (max-width: 100%){
+	.reward-wrapper{
+		width: 500px;
+	}
+
+}
