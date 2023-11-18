@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect, useMemo } from 'react';
 import './playerraidprogress.css';
 import { token } from 'library/oauth';
+import * as rarityStyles from 'library/rarityStyles';
 
 const defaultModeArray = [
 	{ difficulty: 'Raid Finder', score: '-', total: '-' },
@@ -79,6 +80,6 @@ export function CharacterRaidProgress(props) {
 		</>
 	)
 }
-
+// ${rarityStyles.raidRarityColorHandler(item.score)}
 
 

@@ -5,6 +5,9 @@ import { token } from 'library/oauth';
 import { Namespace } from 'components/characterview/namespace/namespace';
 import { CharacterSummary } from 'components/characterview/summary/summary';
 import { MythicRun } from 'components/mythicrun/recentruns/recentruns';
+import { SingleGear } from 'components/gear/singlegear/singlegear';
+import { CharacterEquipment } from 'components/gear/characterequipment/characterequipment';
+
 
 
 export function CharacterOverview(props) {
@@ -12,9 +15,11 @@ export function CharacterOverview(props) {
 	const [data, setData] = useState();
 	const [tabsarray, setTabsArray] = useState([
 		{ name: "overview", isSelected: true }, 
-		{ name: "mythic plus", isSelected: false }, 
-		{ name: "raid", isSelected: false }, 
-		{ name: "arena", isSelected: false }])
+		{ name: "gear", isSelected: false },
+		{ name: "mythic plus", isSelected: false } 
+		// { name: "raid", isSelected: false }, 
+		// { name: "arena", isSelected: false }
+	])
 
 	function handleShowClick(str) {
 		setTabsArray(
@@ -89,12 +94,15 @@ export function CharacterOverview(props) {
 					{isSelectedHandler().name === "mythic plus" &&
 					<MythicRun characterName={characterName}  />}
 
-					{isSelectedHandler().name === "raid" &&
-					<CharacterSummary characterName={characterName} characterRealm= {characterRealm} />}
+					{isSelectedHandler().name === "gear" &&
+					<CharacterEquipment />}
 
-					{isSelectedHandler().name === "arena" &&
-					<CharacterSummary characterName={characterName} characterRealm= {characterRealm} />}
-
+					{/* {isSelectedHandler().name === "raid" && */}
+					{/* <CharacterSummary characterName={characterName} characterRealm= {characterRealm} />} */}
+					{/**/}
+					{/* {isSelectedHandler().name === "arena" && */}
+					{/* <CharacterSummary characterName={characterName} characterRealm= {characterRealm} />} */}
+					{/**/}
 					</>
 					: <div>{'Character not max level so i dont give a shit about them'}</div>}
 			</div>

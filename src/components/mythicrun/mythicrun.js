@@ -56,7 +56,7 @@ export function MythicRunSummary(props) {
 					</div>
 					<div className="vault-stats"><VaultStats rundata = {rundata} /></div>
 
-					<div>{`dungeons this week: ${rundata.length}`}</div>
+					{/* <div>{`dungeons this week: ${rundata.length}`}</div> */}
 				</div>
 				: <div>no data found</div>}
 
