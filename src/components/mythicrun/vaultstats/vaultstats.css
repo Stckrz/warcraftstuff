@@ -1,9 +1,8 @@
 .vaultwrapper{
 	display: flex;
-	flex-direction: column;
+	justify-content: space-around;
+	flex-direction: row;
+	width: 35%;
+	margin: 10px;
 }
 
-.reward-wrapper{
-	display: flex;
-	flex-direction: column;
-}
