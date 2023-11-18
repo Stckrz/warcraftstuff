@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react';
 export function SingleGear(props){
 	const { item } = props;
 	const [itemstats, setItemStats] = useState([]);
+	useEffect(()=>{
+		itemStats()
+		},[item])
 	
 	function itemStats(){
 		setItemStats({
@@ -18,9 +21,6 @@ export function SingleGear(props){
 
 	}
 
-	useEffect(()=>{
-		itemStats()
-		},[])
 
 	return(
 		<>

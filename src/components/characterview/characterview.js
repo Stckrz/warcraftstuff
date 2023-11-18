@@ -94,8 +94,8 @@ export function CharacterOverview(props) {
 					{isSelectedHandler().name === "mythic plus" &&
 					<MythicRun characterName={characterName}  />}
 
-					{isSelectedHandler().name === "gear" &&
-					<CharacterEquipment />}
+					{/* {isSelectedHandler().name === "gear" && */}
+					{/* <CharacterEquipment />} */}
 
 					{/* {isSelectedHandler().name === "raid" && */}
 					{/* <CharacterSummary characterName={characterName} characterRealm= {characterRealm} />} */}
